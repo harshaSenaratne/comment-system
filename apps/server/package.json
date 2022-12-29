@@ -1,0 +1,28 @@
+{
+  "name": "@cs-repo/server",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "author": "Harsha Senaratne",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "npx nodemon"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^8.3.0",
+    "@fastify/cors": "^8.2.0",
+    "@fastify/sensible": "^5.2.0",
+    "@prisma/client": "4.8.0",
+    "@types/node": "^18.11.17",
+    "@types/nodemon": "^1.19.2",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.10.2",
+    "nodemon": "^2.0.20",
+    "prisma": "^4.8.0",
+    "typescript": "^4.9.4"
+  }
+}
