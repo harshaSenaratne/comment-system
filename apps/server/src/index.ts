@@ -36,6 +36,7 @@ app.get("/posts/:id",async(req:FastifyRequest<{
       select:{
         id:true,
         title:true,
+        body:true,
         comments:{
           orderBy:{
             createdAt:'desc'

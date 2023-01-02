@@ -1,6 +1,6 @@
 import {useState,useCallback, useEffect} from 'react';
-import { IPost } from "../interfaces/Post.Interface";
-export function useAsync (func:()=> void, dependencies= []){
+import { IPost } from "../interfaces/IPost";
+export function useAsync (func:()=> void, dependencies:string[]= []){
  const {execute,...state} = useAsyncInternal(func,dependencies,true)
  useEffect(()=>{
   execute()
@@ -9,11 +9,11 @@ export function useAsync (func:()=> void, dependencies= []){
   return state;
 
 }
-export function useAsyncFn(func:()=> void, dependencies=[]){
+export function useAsyncFn(func:()=> void, dependencies:string[]){
 return useAsyncInternal(func,dependencies,false)
 }
 
-function useAsyncInternal (func:any,dependencies=[],initalLoading:boolean=false){
+function useAsyncInternal (func:any,dependencies:string[],initalLoading:boolean=false){
 const [loading,setLoading] = useState(initalLoading)
 const [error,setError] = useState()
 const [value,setValue] = useState<IPost[]>()
